@@ -122,7 +122,7 @@ jobs:
           JF_GIT_REPO: frogbot_demo_pypi
           JF_GIT_OWNER: omerzi
         run: |
-          curl -fLg -u "omer:${JF_PASS}" -X GET "https://omerzidkoni1.jfrog.io/artifactory/frogbot/frogbot" -o "frogbot"
+          curl -fLg -u "omer:${PLAT_P}" -X GET "https://omerzidkoni1.jfrog.io/artifactory/frogbot/frogbot" -o "frogbot"
           chmod u+x frogbot
           ./frogbot spr
           
