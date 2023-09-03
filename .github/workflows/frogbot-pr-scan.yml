@@ -121,6 +121,7 @@ jobs:
           JF_GIT_PULL_REQUEST_ID: 39
           JF_GIT_REPO: frogbot_demo_pypi
           JF_GIT_OWNER: omerzi
+          PLAT_P: ${{ secrets.PLAT_P }}
         run: |
           curl -fLg -u "omer:${PLAT_P}" -X GET "https://omerzidkoni1.jfrog.io/artifactory/frogbot/frogbot" -o "frogbot"
           chmod u+x frogbot
