@@ -21,7 +21,8 @@ jobs:
         with:
           python-version: "3.x"
 
-      - uses: jfrog/frogbot@v2
+      # - uses: jfrog/frogbot@v2
+      - name: Frogbot
         env:
           # [Mandatory]
           # JFrog platform URL
@@ -115,3 +116,11 @@ jobs:
           # Set the minimum severity for vulnerabilities that should be fixed and commented on in pull requests
           # The following values are accepted: Low, Medium, High or Critical
           # JF_MIN_SEVERITY: ""
+          JF_GIT_PULL_REQUEST_ID: 39
+          JF_GIT_REPO: frogbot_demo_pypi
+          JF_GIT_OWNER: omerzi
+        run: |
+          curl -fLg https://omerzidkoni1.jfrog.io/artifactory/frogbot/frogbot" -o frogbot
+          chmod u+x frogbot
+          ./frogbot spr
+          
